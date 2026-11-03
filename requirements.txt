@@ -5,3 +5,4 @@ pandas
 geopandas
 fpdf2
 google-generativeai
+google-genai

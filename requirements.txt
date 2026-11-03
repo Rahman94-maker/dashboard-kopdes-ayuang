@@ -1,0 +1,7 @@
+streamlit
+folium
+streamlit-folium
+pandas
+geopandas
+fpdf2
+google-generativeai

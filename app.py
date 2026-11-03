@@ -123,8 +123,15 @@ st.sidebar.markdown("---")
 st.sidebar.header("🤖 Fitur AI (Gemini)")
 gunakan_ai = st.sidebar.toggle("Buat Ringkasan dengan AI", value=False)
 api_key = ""
+#if gunakan_ai:
+#    api_key = st.sidebar.text_input("Masukkan Gemini API Key:", type="password")
 if gunakan_ai:
-    api_key = st.sidebar.text_input("Masukkan Gemini API Key:", type="password")
+    # Cek apakah API Key ada di Secrets Streamlit Cloud
+    if "GEMINI_API_KEY" in st.secrets:
+        api_key = st.secrets["GEMINI_API_KEY"]
+    else:
+        # Jika tidak ada, baru minta input manual (opsional)
+        api_key = st.sidebar.text_input("Masukkan Gemini API Key:", type="password")
 
 # ==========================================
 # 1.5. EXECUTIVE SUMMARY (DENGAN AI)
